@@ -141,6 +141,9 @@ async function loadProjects() {
                 image.src = project.image;
                 image.alt = 'Project image';
                 image.loading = 'lazy';
+                image.addEventListener('error', () => {
+                    image.remove();
+                });
                 card.appendChild(image);
             }
 
